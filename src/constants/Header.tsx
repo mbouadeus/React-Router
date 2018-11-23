@@ -1,10 +1,12 @@
-import React, {Component} from 'react';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap';
+import * as React from 'react';
+import { MenuItem , Nav, Navbar, NavDropdown, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import NavForm from './NavForm';
 
-class Header extends Component {
-    render() {
+import { treehouselink } from "../reducers/reducer-header";
+
+export default class Header extends React.Component {
+    public render() {
         return (
             <header className="sticky">
                 <Navbar collapseOnSelect fixedTop className="main-nav">
@@ -39,7 +41,7 @@ class Header extends Component {
                                     <NavItem>Javascript</NavItem>
                                 </LinkContainer>
                                 <MenuItem divider />
-                                <NavItem href="https://teamtreehouse.com/library" target="_blank">Treehouse Library</NavItem>
+                                <NavItem href={treehouselink} target="_blank">Treehouse Library</NavItem>
                             </NavDropdown>
                         </Nav>
                         <NavForm/>
@@ -49,13 +51,3 @@ class Header extends Component {
         )
     }
 }
-
-
-/* <span className="icn-logo"><i className="material-icons">code</i></span>
-        <ul className="main-nav">
-            <li><NavLink exact to="/" activeStyle={activeStyles.home}>Home</NavLink></li>
-            <li><NavLink to="/about" activeStyle={activeStyles.about}>About</NavLink></li>
-            <li><NavLink to="/teachers" activeStyle={activeStyles.teachers}>Teachers</NavLink></li>
-            <li><NavLink to="/courses" activeStyle={activeStyles.courses}>Courses</NavLink></li>
-        </ul> */
-export default Header;

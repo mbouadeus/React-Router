@@ -1,4 +1,1 @@
-export type Props = {
-    name: string,
-    topic: string
-}
+export type course = 'html' | 'css' | 'javascript';

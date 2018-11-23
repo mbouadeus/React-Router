@@ -1,20 +1,23 @@
-import React from 'react';
+import * as React from 'react';
 import CourseContainer from "../containers/CourseContainer";
-import { HTMLCourses, CSSCourses, JSCourses } from '../reducers/reducer-courses';
+import { CSSCourses, HTMLCourses, JSCourses } from '../reducers/reducer-courses';
 
-const navLink = [
+const navLinks = [
     {id: "html", topic: "HTML", data: HTMLCourses},
     {id: "css", topic: "CSS", data: CSSCourses},
     {id: "js", topic: "Javascript", data: JSCourses}
 ];
-const Courses = ({match, match: {params: {topic}}}) => (
-    <div className="main-content courses">
-        {topic === undefined ? (
-            <CourseContainer data={HTMLCourses} />
-        ) : (
-            <CourseContainer data={navLink.find(({id}) => id===topic).data} />
-        )}
-    </div>
-);
 
-export default Courses;
+export default function Courses(props) {
+    const {match: {params: {topic}}} = props;
+    return (
+        <div className="main-content courses">
+            {topic !== undefined ? (
+                <CourseContainer data={HTMLCourses}/>
+            ) : (
+                <CourseContainer data={navLinks.find(({id}) => id === topic).data}/>
+                // https://github.com/Microsoft/TypeScript/issues/19415
+            )}
+        </div>
+    )
+}

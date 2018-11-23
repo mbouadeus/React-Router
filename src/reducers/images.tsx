@@ -1,0 +1,1 @@
+export const logo = "https://material.io/tools/icons/static/icons/baseline-code-24px.svg";

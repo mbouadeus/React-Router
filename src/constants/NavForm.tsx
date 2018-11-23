@@ -1,10 +1,9 @@
-import React from 'react';
-import {Navbar, FormControl, FormGroup, Button} from 'react-bootstrap';
+import * as React from 'react';
+import { Button, FormControl, FormGroup, Navbar } from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 
-const NavForm = (props) => {
-    const handleSubmit = () => {
-        console.log(`Hello ${this.topic.value}`);
+function NavForm(props) {
+    function handleSubmit() {
         props.history.push(`/teachers/${this.topic.value}/${this.name.value}`);
     }
     return (
