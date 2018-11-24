@@ -1,0 +1,48 @@
+/* =================================
+  Layout & Elements
+==================================== */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* =================================
+  Teacher Card
+==================================== */
+
+.teacher-card {
+    width: 300px;
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+.teacher-image {
+    width: 272px;
+    border-radius: 6px;
+}
+
+.teacher-button {
+    margin-left: 95px;
+}
+
+.teacher-desc {
+    margin: 20px 0;
+}
+
+/* =================================
+  Course Card
+==================================== */
+
+.course-card {
+    padding: 1.2em 2em;
+}
+.course-img {
+    margin-left: calc(50% - 35px);
+    margin-bottom: 1em;
+}
+
+.course-title {
+    margin-bottom: .5em;
+}

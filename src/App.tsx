@@ -2,6 +2,7 @@ import * as React from 'react';
 import {BrowserRouter as Router,
     Route,
     Switch} from 'react-router-dom';
+import './App.css';
 
 // App Components
 
@@ -12,6 +13,7 @@ import Header from './constants/Header';
 import Home from './constants/Home';
 import NotFound from './constants/NotFound';
 import Teachers from './constants/Teachers';
+import Footer from "./constants/Footer";
 
 const routes = [
     {path: "/", component: Home, key: 1},
@@ -23,13 +25,14 @@ const routes = [
 ];
 const App = () => (
     <Router>
-        <div className="">
+        <div>
             <Header/>
             <Switch>
                 {routes.map(({path, component, key}) =>
                     <Route exact={true} path={path} component={component} key={key}/>)}
                 <Route component={NotFound}/>
             </Switch>
+            <Footer/>
         </div>
     </Router>
 );

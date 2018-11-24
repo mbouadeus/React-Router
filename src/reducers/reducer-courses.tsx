@@ -114,3 +114,11 @@ export const JSCourses = [
     id: "js-6"
   }
 ];
+
+const CourseNavs = [
+    {id: "html", topic: "HTML", data: HTMLCourses},
+    {id: "css", topic: "CSS", data: CSSCourses},
+    {id: "js", topic: "Javascript", data: JSCourses}
+];
+
+export default CourseNavs;

@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import Course from '../components/Course';
 
 
-const CourseContainer = ({data}) => {
-  let courses = data.map((course) => {
+export default function CourseContainer({data, topic}) {
+  const courses = data.map((course) => {
     return <Course title={course.title}
                    desc={course.description}
                    img={course.img_src}
@@ -11,11 +11,8 @@ const CourseContainer = ({data}) => {
   }); 
   return (
     <div>
-      <ul>
-        {courses}    
-      </ul>
+        <h2 className="main-content-title">{topic}</h2>
+        {courses}
     </div>
   );
 }
-
-export default CourseContainer;

@@ -1,15 +1,23 @@
 import * as React from 'react';
+import {Thumbnail, Button} from 'react-bootstrap';
+import {withRouter} from 'react-router-dom';
+import './Card.css';
 
-export default function TeacherCard(props) {
+function TeacherCard(props) {
+    function handleSubmit() {
+        props.history.push(`/teachers/${props.topic}/${props.name}`);
+    }
     return (
-        <div className="teacher-card">
-            <img className="card-image" width="100%" src={props.img_src} />
-            <div className="card-body">
-                <div className="card-name">{props.name}</div>
-                <div className="card-topic">{props.topic}</div>
-                <div className="card-bio">{props.bio}</div>
-                <a className="card-button">Search</a>
+        <Thumbnail className={"teacher-card cleafix"}>
+            <div>
+                <img className="teacher-image" src={props.img_src} alt="teacher-image"/>
+                <h3>{props.name}</h3>
+                <h4>{props.topic}</h4>
+                <p className="teacher-desc">{props.desc}</p>
+                <Button className="teacher-button" bsStyle="primary" onClick={handleSubmit}>Search</Button>
             </div>
-        </div>
+        </Thumbnail>
     )
 }
+
+export default withRouter(TeacherCard);

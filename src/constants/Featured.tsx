@@ -6,7 +6,7 @@ export interface IProps {
 }
 
 export default function Featured(props) {
-    const {name, topic}:IProps = props.matc.params;
+    const {name, topic}:IProps = props.match.params;
     return (
         <div className="main-content">
             <h2 className="main-content-title">{name}</h2>
