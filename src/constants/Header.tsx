@@ -21,7 +21,7 @@ export default class Header extends React.Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav bsStyle="pills">
-                            <LinkContainer exact to="/">
+                            <LinkContainer exact to="/home">
                                 <NavItem>Home</NavItem>
                             </LinkContainer>
                             <LinkContainer exact to="/about">
